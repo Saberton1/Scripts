@@ -1,0 +1,110 @@
+if game.PlaceId == 7993293100 then
+    local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+    local Window = Library.CreateLib("Tsunami Game Script Beta V1", "Ocean")
+
+    --Main
+    local Main = Window:NewTab("Main")
+    local MainSection = Main:NewSection("Main")
+    MainSection:NewDropdown("Give Gear", "Gives the player a gear", {"JumpPotion", "SpeedPotion", "HealthPotion", "Trident", "Canoe", "Sponge", "Barrel", "Anchor", "Binoculars", "BlowDryer", "PaddleBoard", "LifeRing", "Trampoline", "Shield"}, function(v)
+        local A_1 = v
+        local Event = game:GetService("ReplicatedStorage").RemoteEvents.Gui.ShopItemPurchased
+        Event:FireServer(A_1)
+end)
+MainSection:NewButton("Autofarm script", "Gives you a good autofarm script", function(v)
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/Dako12345lol/Test/main/Test"))()
+end)
+MainSection:NewButton("Infinity Yield", "Gives you an admin script", function(v)
+    loadstring(game:HttpGet(('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'),true))()
+end)
+local MainSection = Main:NewSection("Teleports")
+MainSection:NewButton("Tp To SquidCorp", "Teleports you to squidcorp", function(v)
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-9, 210.050003, 1010.99994, 0, 0, -1, 0, 1, 0, 1, 0,0)
+end)
+MainSection:NewButton("Tp To Secret Location", "Teleports you to a secret location", function(v)
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-60.600071, 46.1000061, 1224.80005, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+end)
+MainSection:NewButton("Tp To Finnish", "Teleports you to the finnish", function(v)
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-9.5, 38.5, -1005.50006, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+end)
+MainSection:NewButton("Tp Outside", "Teleports you Outside", function(v)
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-9, 228, 1079.5, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+end)
+MainSection:NewButton("Tp At office", "Teleports you at the office", function(v)
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-9, 230.5, 1054.5, 0, 0, 1, 0, 1, -0, -1, 0, 0)
+end)
+MainSection:NewButton("Tp on top of a wall", "Teleports on top of a wall", function(v)
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(147, 264.5, 563, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+end)
+
+--Player
+local Player = Window:NewTab("Player")
+local PlayerSection = Player:NewSection("Player")
+PlayerSection:NewSlider("Walkspeed", "Change Walk Speed", 1000, 16, function(v) -- 1000 (MaxValue) | 16 (MinValue)
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = v
+end)
+PlayerSection:NewSlider("JumpPower", "Change JumpPower", 5000, 50, function(v) -- 5000 (MaxValue) | 50 (MinValue)
+    game.Players.LocalPlayer.Character.Humanoid.JumpPower = v
+end)
+local PlayerSection = Player:NewSection("Fun")
+PlayerSection:NewButton("Become Big", "Makes you big", function(v)
+local LocalPlayer = game:GetService("Players").LocalPlayer
+local Character = LocalPlayer.Character
+local Humanoid = Character:FindFirstChildOfClass("Humanoid")
+
+function rm()
+	for i,v in pairs(Character:GetDescendants()) do
+		if v:IsA("BasePart") then
+			if v.Name == "Handle" or v.Name == "Head" then
+				if Character.Head:FindFirstChild("OriginalSize") then
+					Character.Head.OriginalSize:Destroy()
+				end
+			else
+				for i,cav in pairs(v:GetDescendants()) do
+					if cav:IsA("Attachment") then
+						if cav:FindFirstChild("OriginalPosition") then
+							cav.OriginalPosition:Destroy()  
+						end
+					end
+				end
+				v:FindFirstChild("OriginalSize"):Destroy()
+				if v:FindFirstChild("AvatarPartScaleType") then
+					v:FindFirstChild("AvatarPartScaleType"):Destroy()
+				end
+			end
+		end
+	end
+end
+
+rm()
+wait(0.5)
+Humanoid:FindFirstChild("BodyProportionScale"):Destroy()
+wait(1)
+
+rm()
+wait(0.5)
+Humanoid:FindFirstChild("BodyHeightScale"):Destroy()
+wait(1)
+
+rm()
+wait(0.5)
+Humanoid:FindFirstChild("BodyWidthScale"):Destroy()
+wait(1)
+
+rm()
+wait(0.5)
+Humanoid:FindFirstChild("BodyDepthScale"):Destroy()
+wait(1)
+
+rm()
+wait(0.5)
+Humanoid:FindFirstChild("HeadScale"):Destroy()
+wait(1)
+end)
+
+--Troll
+local Scripts = Window:NewTab("DO NOT ENTER")
+local ScriptsSection = Scripts:NewSection("I WARNED YOU")
+ScriptsSection:NewButton("DO NOT CLICK", "IF U CLICK UR A DUMBASS", function(v)
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/2dgeneralspam1/Sniff-Hub/main/Sniff%20Hub'))()
+end)
+end
